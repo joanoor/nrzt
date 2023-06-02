@@ -1,0 +1,26 @@
+{
+  "name": "@nrzt/cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
+  "repository": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

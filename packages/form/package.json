@@ -1,0 +1,22 @@
+{
+  "name": "@nrzt/form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "async-validator": "^4.2.5"
+  }
+}

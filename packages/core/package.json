@@ -1,0 +1,23 @@
+{
+  "name": "@nrzt/core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "publishConfig": {},
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "is-promise": "^4.0.0"
+  }
+}

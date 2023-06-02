@@ -1,0 +1,28 @@
+{
+  "name": "@nrzt/chart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "publishConfig": {},
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/element-resize-detector": "^1.1.3",
+    "echarts": "^5.2.2",
+    "element-resize-detector": "^1.2.4"
+  }
+}

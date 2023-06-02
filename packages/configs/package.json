@@ -1,0 +1,14 @@
+{
+  "name": "@nrzt/configs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "react-library.json",
+    "global.d.ts"
+  ],
+  "dependencies": {}
+}

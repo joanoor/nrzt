@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "picocolors": "^1.0.0",
+    "prettier": "^2.5.1",
+    "shelljs": "^0.8.5",
+    "tsup": "^6.7.0",
+    "turbo": "^1.9.7"
+  },
+  "packageManager": "pnpm@7.15.0",
+  "name": "nrzt"
+}
