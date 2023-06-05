@@ -1,4 +1,4 @@
-import merge from 'deepmerge'
+import { deepmerge } from '@nrzt/core'
 import { isString } from 'lodash-es'
 import type {
   // LegendComponentOption,
@@ -87,7 +87,6 @@ const color_axisTick = '#ebebeb' // 坐标轴刻度线
 const color_axisLine = '#ebebeb' // 轴线
 const color_axisLabel = '#8b8b8b' // 坐标轴刻度标签
 const color_splitLine = '#ebebeb' // 坐标轴里面的辅助线
-
 
 // // 文本属性
 // const textStyle = {
@@ -339,18 +338,18 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
   hbar: {
     color: color_bar,
     tooltip: { trigger: 'axis' },
-    grid: merge(grid, { right: '80px' }),
+    grid: deepmerge(grid, { right: '80px' }),
     xAxis: {
       ...(yAxis as XAXisComponentOption),
       axisLine: {
         show: false,
       },
     },
-    yAxis: merge(xAxis, { inverse: true }),
+    yAxis: deepmerge(xAxis, { inverse: true }),
     series: series_hbar,
   },
   pictorialBar: {
-    grid: merge({}, grid),
+    grid: deepmerge({}, grid),
     xAxis,
     yAxis,
     series: {
@@ -444,7 +443,7 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
     color: color_line,
     tooltip: {},
 
-    series: merge(series_radar, {
+    series: deepmerge(series_radar, {
       center: ['50%', '50%'],
       radius: '50%',
       name: {
@@ -508,5 +507,5 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
 }
 
 export function getDefaultChartOpt(option: EChartsOption, type: ChartType) {
-  return merge<EChartsOption>(allChartOpt[type], option)
+  return deepmerge<EChartsOption>(allChartOpt[type], option)
 }

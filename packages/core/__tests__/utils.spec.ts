@@ -351,7 +351,9 @@ describe(`测试utils模块代码`, () => {
 
   test('strToAsterisk: 将手机号码转换成中间四位为星号', () => {
     expect(utils.convertStrToAsterisk('17755429999')).toBe('177****9999')
-    expect(utils.convertStrToAsterisk('18274648477555', 3, 9)).toBe('182******77555')
+    expect(utils.convertStrToAsterisk('18274648477555', 3, 9)).toBe(
+      '182******77555'
+    )
     expect(() => utils.convertStrToAsterisk('123')).toThrow(
       '字符串长度不能小于指定的区间'
     )

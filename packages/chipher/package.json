@@ -1,0 +1,21 @@
+{
+  "name": "@nrzt/cipher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "jsencrypt": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1"
+  }
+}

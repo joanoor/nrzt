@@ -16,7 +16,6 @@
     "noUnusedParameters": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
-    "jsxTemplates": true,
     "lib": [
       "ESNext",
       "DOM"

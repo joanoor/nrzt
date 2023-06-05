@@ -18,6 +18,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "is-promise": "^4.0.0"
+    "deepmerge": "^4.3.1",
+    "is-promise": "^4.0.0",
+    "xlsx": "^0.18.5"
   }
 }
