@@ -1,7 +1,10 @@
 {
   "name": "@nrzt/form",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.1.0",
+  "description": "Generate form form structure and verification rules",
+  "author": "Joanoor <https://github.com/joanoor>",
+  "license": "MIT",
+  "homepage": "https://github.com/joanoor/nrzt#readme",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,14 +12,33 @@
     "import": "./dist/index.mjs",
     "require": "./dist/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanoor/nrzt.git",
+    "directory": "packages/form"
+  },
+  "bugs": {
+    "url": "https://github.com/joanoor/nrzt/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup"
+    "build": "tsup",
+    "clean": "rimraf node_modules dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "form",
+    "validator",
+    "async-validator"
+  ],
+  "sideEffects": false,
   "dependencies": {
-    "async-validator": "^4.2.5"
+    "async-validator": "^4.2.5",
+    "@nrzt/core": "workspace:*"
   }
 }

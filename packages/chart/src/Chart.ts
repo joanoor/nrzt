@@ -6,7 +6,7 @@
 import * as echarts from 'echarts'
 import type { ECharts, EChartsOption, EChartsCoreOption } from 'echarts'
 import elementResizeDetectorMaker from 'element-resize-detector'
-import { debounce } from 'lodash-es'
+import { debounce } from '@nrzt/core'
 import type { MoreOpt, ThemeOpt } from './types'
 
 export class IChart {

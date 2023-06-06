@@ -1,7 +1,10 @@
 {
   "name": "@nrzt/chart",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.1.0",
+  "description": "Utilities based on echarts",
+  "author": "Joanoor <https://github.com/joanoor>",
+  "license": "MIT",
+  "homepage": "https://github.com/joanoor/nrzt#readme",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -9,20 +12,33 @@
     "require": "./dist/index.js",
     "default": "./dist/index.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanoor/nrzt.git",
+    "directory": "packages/chart"
+  },
+  "bugs": {
+    "url": "https://github.com/joanoor/nrzt/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup"
+    "build": "tsup",
+    "clean": "rimraf node_modules dist"
   },
-  "keywords": [],
-  "publishConfig": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "files": [
     "dist"
   ],
-  "author": "",
-  "license": "MIT",
+  "keywords": [
+    "echarts"
+  ],
+  "sideEffects": false,
   "dependencies": {
     "@types/element-resize-detector": "^1.1.3",
     "echarts": "^5.2.2",
-    "element-resize-detector": "^1.2.4"
+    "element-resize-detector": "^1.2.4",
+    "@nrzt/core": "workspace:*"
   }
 }

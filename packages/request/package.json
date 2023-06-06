@@ -1,7 +1,10 @@
 {
   "name": "@nrzt/request",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.1.0",
+  "description": "Axios-based encapsulation",
+  "author": "Joanoor <https://github.com/joanoor>",
+  "license": "MIT",
+  "homepage": "https://github.com/joanoor/nrzt#readme",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,14 +12,35 @@
     "import": "./dist/index.mjs",
     "require": "./dist/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanoor/nrzt.git",
+    "directory": "packages/request"
+  },
+  "bugs": {
+    "url": "https://github.com/joanoor/nrzt/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup"
+    "build": "tsup",
+    "clean": "rimraf node_modules dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "axios"
+  ],
+  "sideEffects": false,
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "qs": "^6.11.2",
+    "@nrzt/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7"
   }
 }

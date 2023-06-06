@@ -1,13 +1,13 @@
 {
-  "name": "@nrzt/core",
+  "name": "@nrzt/cipher",
   "version": "2.1.0",
-  "description": "Collection of essential Utilities",
+  "description": "Cipher based on crypto-js and jsencrypt",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
   "homepage": "https://github.com/joanoor/nrzt#readme",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     "import": "./dist/index.mjs",
     "require": "./dist/index.js"
@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joanoor/nrzt.git",
-    "directory": "packages/core"
+    "directory": "packages/cipher"
   },
   "bugs": {
     "url": "https://github.com/joanoor/nrzt/issues"
@@ -32,19 +32,16 @@
     "dist"
   ],
   "keywords": [
-    "lodash-es"
+    "cipher",
+    "crypto-js",
+    "jsencrypt"
   ],
   "sideEffects": false,
   "dependencies": {
-    "dayjs": "^1.11.8",
-    "deepmerge": "^4.3.1",
-    "is-promise": "^4.0.0",
-    "lodash-es": "^4.17.21",
-    "qs": "^6.11.2",
-    "xlsx": "^0.18.5"
+    "crypto-js": "^4.1.1",
+    "jsencrypt": "^3.3.2"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.7",
-    "@types/qs": "^6.9.7"
+    "@types/crypto-js": "^4.1.1"
   }
 }

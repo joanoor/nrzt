@@ -1,4 +1,4 @@
-import { openWindow } from '@nrzt/core'
+import { openWindow } from '../utils'
 import { base64ToBlob, imgUrl2Base64 } from './convertFile'
 import { utils, WorkBook, write } from 'xlsx'
 
