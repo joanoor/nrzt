@@ -6,8 +6,6 @@
   "license": "MIT",
   "files": [
     "base.json",
-    "nextjs.json",
-    "react-library.json",
     "global.d.ts"
   ],
   "dependencies": {}
