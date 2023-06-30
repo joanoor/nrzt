@@ -365,3 +365,30 @@ export function eachTree(treeDatas: any[], callBack: Fn, parentNode = {}) {
     }
   })
 }
+
+/**
+ * 对树结构进行排序
+ * @param treeDatas 树
+ * @param callBack 回调
+ */
+export function sortTreeData(
+  treeData: any[],
+  callback: (a: any, b: any) => number,
+  children = 'children'
+) {
+  if (!Array.isArray(treeData)) {
+    return []
+  }
+
+  // 对每个节点进行排序
+  treeData.forEach(node => {
+    if (node[children] && node[children].length > 0) {
+      node[children] = sortTreeData(node[children], callback, children)
+    }
+  })
+
+  // sort方法会直接修改原数组
+  treeData.sort(callback)
+
+  return treeData
+}

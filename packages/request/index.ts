@@ -3,7 +3,6 @@ import { setObjToUrlParams, isString, deepmerge } from '@nrzt/core'
 import { formatRequestDate, addTimeStamp } from './src/helper'
 import { RequestEnum, ContentTypeEnum } from './src/types'
 import { IAxios } from './src/Axios'
-export * from 'axios'
 
 // transform的默认值
 const defaultTransform: AxiosTransform = {
@@ -134,4 +133,3 @@ export * from './src/axiosTransform'
 export * from './src/checkStatus'
 export * from './src/helper'
 export * from './src/types'
-export * from 'axios'
