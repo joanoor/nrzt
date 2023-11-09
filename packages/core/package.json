@@ -1,0 +1,52 @@
+{
+  "name": "@nrzt/core",
+  "version": "2.2.3",
+  "description": "Collection of essential Utilities",
+  "author": "Joanoor <https://github.com/joanoor>",
+  "license": "MIT",
+  "homepage": "https://github.com/joanoor/nrzt#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanoor/nrzt.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/joanoor/nrzt/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup",
+    "clean": "rimraf node_modules dist"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "lodash-es"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "deepmerge": "^4.3.1",
+    "is-promise": "^4.0.0",
+    "qs": "^6.11.2"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7"
+  },
+  "peerDependencies": {
+    "@types/lodash-es": ">=4.17.7",
+    "dayjs": ">=1.11.8",
+    "lodash-es": ">=4.17.21",
+    "xlsx": ">=0.18.5"
+  }
+}

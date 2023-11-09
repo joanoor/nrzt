@@ -1,0 +1,24 @@
+{
+  "name": "@nrzt/configs",
+  "version": "2.1.4",
+  "description": "Basic configuration",
+  "author": "Joanoor <https://github.com/joanoor>",
+  "license": "MIT",
+  "homepage": "https://github.com/joanoor/nrzt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanoor/nrzt.git",
+    "directory": "packages/configs"
+  },
+  "bugs": {
+    "url": "https://github.com/joanoor/nrzt/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "base.json",
+    "global.d.ts"
+  ],
+  "dependencies": {}
+}
