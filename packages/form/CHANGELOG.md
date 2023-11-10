@@ -1,5 +1,21 @@
 # @nrzt/form
 
+## 2.1.6
+
+### Patch Changes
+
+- 修改 request 中的相关配置
+- Updated dependencies
+  - @nrzt/core@2.2.5
+
+## 2.1.5
+
+### Patch Changes
+
+- 修改了 request 中相关配置
+- Updated dependencies
+  - @nrzt/core@2.2.4
+
 ## 2.1.4
 
 ### Patch Changes

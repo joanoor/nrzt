@@ -81,7 +81,6 @@ export const compressionPicture = async (
   quality = 0.5,
   threshold = 100 * 1024
 ) => {
-  console.log('文件的大小', file)
   if (file.size > threshold) {
     const canvas = document.createElement('canvas')
     const context = canvas.getContext('2d') as CanvasRenderingContext2D

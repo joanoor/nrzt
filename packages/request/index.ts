@@ -1,5 +1,5 @@
 import type { AxiosTransform, CreateAxiosOptions } from './src/axiosTransform'
-import { setObjToUrlParams, isString, deepmerge, isNumber, isNullOrUnDef, isEmpty } from '@nrzt/core'
+import { setObjToUrlParams, isString, deepmerge, isNumber } from '@nrzt/core'
 import { formatRequestDate, addTimeStamp } from './src/helper'
 import { RequestEnum, ContentTypeEnum } from './src/types'
 import { IAxios } from './src/Axios'
@@ -56,34 +56,18 @@ const defaultTransform: AxiosTransform = {
     }
     else {
       /* istanbul ignore else */
-      if (!isNullOrUnDef(params)) {
-        if (!isString(params)) {
-          formatDate && formatRequestDate(params)
-          if (
-            Reflect.has(config, 'data') &&
-            config.data &&
-            !isEmpty(config.data)
-          ) {
-            config.data = data
-            config.params = params
-          } else {
-            // 非GET请求如果没有提供data，则将params视为data
-            config.data = params
-            config.params = undefined
-          }
-
-          /* istanbul ignore if */
-          if (joinParamsToUrl) {
-            config.url = setObjToUrlParams(
-              config.url as string,
-              Object.assign({}, config.params, config.data)
-            )
-          }
-        } else {
-          // 兼容restful风格
-          config.url = config.url + params
-          config.params = undefined
+      if (!isString(params)) {
+        /* istanbul ignore if */
+        if (joinParamsToUrl) {
+          config.url = setObjToUrlParams(
+            config.url as string,
+            Object.assign({}, config.params, config.data)
+          )
         }
+      } else {
+        // 兼容restful风格
+        config.url = config.url + params
+        config.params = undefined
       }
     }
     return config

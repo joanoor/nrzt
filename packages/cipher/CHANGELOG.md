@@ -1,5 +1,17 @@
 # @nrzt/cipher
 
+## 2.1.4
+
+### Patch Changes
+
+- 修改 request 中的相关配置
+
+## 2.1.3
+
+### Patch Changes
+
+- 修改了 request 中相关配置
+
 ## 2.1.2
 
 ### Patch Changes

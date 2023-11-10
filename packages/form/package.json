@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/form",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "description": "Generate form form structure and verification rules",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",

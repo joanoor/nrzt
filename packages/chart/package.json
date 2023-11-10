@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/chart",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "description": "Utilities based on echarts",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",

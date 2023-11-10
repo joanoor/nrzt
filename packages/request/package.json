@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/request",
-  "version": "2.1.5",
+  "version": "2.1.8",
   "description": "Axios-based encapsulation",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
