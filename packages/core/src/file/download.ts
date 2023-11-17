@@ -1,6 +1,12 @@
 import { openWindow } from '../utils'
 import { base64ToBlob, imgUrl2Base64 } from './convertFile'
-import { utils, WorkBook, write } from 'xlsx'
+import { utils, WorkBook, write, XLSX$Utils } from 'xlsx'
+
+interface DownloadOption {
+  afterDownload?: () => void
+  mime?: string
+  bom?: BlobPart
+}
 
 // 将字符串转ArrayBuffer
 function s2ab(s: any) {
@@ -30,7 +36,7 @@ function download(blobUrl: string, fileName: string) {
   aLink.href = blobUrl
   // HTML5新增的属性，指定保存文件名，可以不要后缀，注意，有时候 file:///模式下不会生效
   aLink.download = fileName || ''
-  let event
+  let event: MouseEvent
   if (window.MouseEvent) event = new MouseEvent('click')
   //   移动端
   else {
@@ -66,18 +72,14 @@ function download(blobUrl: string, fileName: string) {
 export function downloadByImgUrl(
   url: string,
   filename: string,
-  option: {
-    onDownloaded?: () => void
-    mime?: string
-    bom?: BlobPart
-  } = {}
+  option: DownloadOption = {}
 ) {
-  const { onDownloaded, mime, bom } = option
+  const { afterDownload, mime, bom } = option
   imgUrl2Base64(url).then(base64 => {
     downloadByBase64(base64, filename, {
       mime,
       bom,
-      onDownloaded,
+      afterDownload,
     })
   })
 }
@@ -92,19 +94,15 @@ export function downloadByImgUrl(
 export function downloadByBase64(
   buf: string,
   filename: string,
-  option: {
-    onDownloaded?: () => void
-    mime?: string
-    bom?: BlobPart
-  } = {}
+  option: DownloadOption = {}
 ) {
-  const { onDownloaded, mime, bom } = option
+  const { afterDownload, mime, bom } = option
 
   const base64Buf = base64ToBlob(buf)
   downloadByBlobData(base64Buf, filename, {
     mime,
     bom,
-    onDownloaded,
+    afterDownload,
   })
 }
 
@@ -118,13 +116,9 @@ export function downloadByBase64(
 export function downloadByBlobData(
   data: BlobPart,
   filename: string,
-  option: {
-    mime?: string
-    bom?: BlobPart
-    onDownloaded?: () => void
-  } = {}
+  option: DownloadOption = {}
 ) {
-  const { mime, bom, onDownloaded } = option
+  const { mime, bom, afterDownload } = option
   let blobURL = ''
   if (typeof data == 'object' && data instanceof Blob) {
     blobURL = URL.createObjectURL(data) // 创建blob地址
@@ -136,7 +130,7 @@ export function downloadByBlobData(
     blobURL = URL.createObjectURL(blob)
   }
   download(blobURL, filename)
-  onDownloaded && onDownloaded()
+  afterDownload && afterDownload()
 }
 
 /**
@@ -187,39 +181,37 @@ export function downloadByFileUrl({
 }
 
 /**
- * 通过后端返回的json数据来下载excel
+ * 通过后端返回的json数据来下载excel(需要注意的是，导出全部数据时，数据量较大)
  * @param data
- * @param option
+ * @param fileName 文件名称
+ * @param option 选项
+ * @param option.onBefore - The name of the employee.
+ * @param option.department - The employee's department.
  * @returns
  */
 export function downloadByJson<T extends any[]>(
   data: T,
   fileName: string,
   option: {
-    onBefore?: (data: T) => T
-    onSetTableHeader?: (headers: string) => string
-    onDownloaded?: () => void
+    beforeDownload?: (data: T, wb: WorkBook, utils: XLSX$Utils) => T
+    afterDownload?: () => void
   }
 ) {
   if (!data || data.length === 0) return
-  const { onBefore, onDownloaded, onSetTableHeader } = option
-  const data2 = onBefore ? onBefore(data) : data
+  const { beforeDownload, afterDownload } = option
 
-  let sheet1 = utils.json_to_sheet(data2)
-  const jsonSheet1 = onSetTableHeader
-    ? onSetTableHeader(JSON.stringify(sheet1))
-    : JSON.stringify(sheet1)
-
-  sheet1 = JSON.parse(jsonSheet1)
   const wb = utils.book_new()
-  utils.book_append_sheet(wb, sheet1, 'sheet1')
-  const workbookBlob = workbook2blob(wb)
-  let fileName2 = `${fileName}.xlsx`
-  if (fileName2.includes('.')) {
-    fileName2 = fileName2.split('.')[0] + '.xlsx'
+  if (!beforeDownload) {
+    // 默认的sheet
+    utils.book_append_sheet(wb, utils.json_to_sheet(data), 'sheet1')
+  } else {
+    // 自定义的sheet
+    beforeDownload(data, wb, utils)
   }
 
-  downloadByBlobData(workbookBlob, fileName2, {
-    onDownloaded,
+  const workbookBlob = workbook2blob(wb)
+
+  downloadByBlobData(workbookBlob, fileName + '.xlsx', {
+    afterDownload,
   })
 }
