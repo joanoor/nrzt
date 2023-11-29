@@ -1,4 +1,4 @@
-import { AesEncryption } from '@nrzt/cipher'
+import { EncryptionFactory, type Encryption } from '@nrzt/cipher'
 import { defaultCacheCipher, DEFAULT_CACHE_TIME } from './constant'
 import { CreateStorageParams, Options } from './types'
 import { WebStorage } from './WebStorage'
@@ -17,7 +17,11 @@ const createWebStorage = ({
     throw new Error('When hasEncrypt is true, the key or iv must be 16 bits!')
   }
 
-  const encryption = new AesEncryption({ key, iv })
+  // const encryption = new AesEncryption({ key, iv })
+  const encryption: Encryption = EncryptionFactory.createAesEncryption({
+    key,
+    iv,
+  })
 
   return new WebStorage({
     storage,

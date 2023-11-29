@@ -195,7 +195,7 @@ export function downloadByJson<T extends any[]>(
   option: {
     beforeDownload?: (data: T, wb: WorkBook, utils: XLSX$Utils) => T
     afterDownload?: () => void
-  }
+  } = {}
 ) {
   if (!data || data.length === 0) return
   const { beforeDownload, afterDownload } = option

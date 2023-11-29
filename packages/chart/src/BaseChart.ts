@@ -290,18 +290,7 @@ const series_scatter: ScatterSeriesOption = {
   name: '',
   data: [],
 }
-const series_map: MapSeriesOption = {
-  type: 'map',
-  selectedMode: 'single',
-  label: {
-    show: true,
-  },
-  itemStyle: {
-    areaColor: '#e1e1e1',
-  },
-  data: [],
-  map: '',
-}
+
 const series_radar: RadarSeriesOption = {
   type: 'radar',
   areaStyle: {},
@@ -323,19 +312,8 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
     xAxis,
     series: [],
   },
-  vbar: {
-    color: color_bar,
-    tooltip: { trigger: 'axis' },
-    grid,
-    xAxis: {
-      ...xAxis,
-    },
-    yAxis,
-    series: series_bar,
-  },
   // 水平bar
   hbar: {
-    color: color_bar,
     tooltip: { trigger: 'axis' },
     grid: deepmerge(grid, { right: '80px' }),
     xAxis: {
@@ -345,7 +323,18 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
       },
     },
     yAxis: deepmerge(xAxis, { inverse: true }),
-    series: series_hbar,
+    series: [],
+  },
+  // 垂直bar
+  vbar: {
+    color: color_bar,
+    tooltip: { trigger: 'axis' },
+    grid,
+    xAxis: {
+      ...xAxis,
+    },
+    yAxis,
+    series: series_bar,
   },
   pictorialBar: {
     grid: deepmerge({}, grid),
@@ -406,15 +395,7 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
   // 地图
   map: {
     animation: false,
-    visualMap: {
-      min: 0,
-      max: 1000,
-      hoverLink: false,
-      show: false,
-      color: ['#3a8dfb', '#39fdef'],
-      textStyle: { color: '#fff' },
-    },
-    series: series_map,
+    series: [],
   },
   // 散点图和地图结合
   'scatter-map': {
@@ -505,6 +486,16 @@ const allChartOpt: Record<ChartType, EChartsOption> = {
   },
 }
 
+/**
+ * @deprecated
+ * @param option
+ * @param type
+ * @returns
+ */
 export function getDefaultChartOpt(option: EChartsOption, type: ChartType) {
   return deepmerge<EChartsOption>(allChartOpt[type], option)
+}
+
+export function getChartOption(option: EChartsOption, type: ChartType) {
+  return
 }

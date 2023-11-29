@@ -1,5 +1,13 @@
 # @nrzt/request
 
+## 2.1.9
+
+### Patch Changes
+
+- 优化了依赖结构，修改了加密的方法
+- Updated dependencies
+  - @nrzt/core@2.2.6
+
 ## 2.1.8
 
 ### Patch Changes

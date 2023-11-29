@@ -105,6 +105,9 @@ importers:
       '@types/lodash-es':
         specifier: '>=4.17.7'
         version: 4.17.7
+      '@types/qs':
+        specifier: ^6.9.7
+        version: 6.9.7
       dayjs:
         specifier: '>=1.11.8'
         version: 1.11.8
@@ -123,10 +126,6 @@ importers:
       xlsx:
         specifier: '>=0.18.5'
         version: 0.18.5
-    devDependencies:
-      '@types/qs':
-        specifier: ^6.9.7
-        version: 6.9.7
 
   packages/form:
     dependencies:
@@ -145,16 +144,15 @@ importers:
       '@nrzt/core':
         specifier: workspace:*
         version: link:../core
+      '@types/qs':
+        specifier: ^6.9.7
+        version: 6.9.7
       axios:
         specifier: '>=1.4.0'
         version: 1.4.0
       qs:
         specifier: ^6.11.2
         version: 6.11.2
-    devDependencies:
-      '@types/qs':
-        specifier: ^6.9.7
-        version: 6.9.7
 
 packages:
 
@@ -947,7 +945,7 @@ packages:
 
   /@types/qs@6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
-    dev: true
+    dev: false
 
   /@types/semver@6.2.3:
     resolution: {integrity: sha512-KQf+QAMWKMrtBMsB8/24w53tEsxllMj6TuA80TT/5igJalLI/zm0L3oXRbIAl4Ohfc85gyHX/jhMwsVkmhLU4A==}

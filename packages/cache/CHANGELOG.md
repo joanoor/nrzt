@@ -1,5 +1,14 @@
 # @nrzt/cache
 
+## 2.1.7
+
+### Patch Changes
+
+- 优化了依赖结构，修改了加密的方法
+- Updated dependencies
+  - @nrzt/cipher@2.1.5
+  - @nrzt/core@2.2.6
+
 ## 2.1.6
 
 ### Patch Changes

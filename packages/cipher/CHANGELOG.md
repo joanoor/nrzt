@@ -1,5 +1,11 @@
 # @nrzt/cipher
 
+## 2.1.5
+
+### Patch Changes
+
+- 优化了依赖结构，修改了加密的方法
+
 ## 2.1.4
 
 ### Patch Changes

@@ -1,9 +1,9 @@
-import { AesEncryption } from '@nrzt/cipher'
+import { Encryption } from '@nrzt/cipher'
 import { isNullOrUnDef } from '@nrzt/core'
 import { CreateStorageParams } from './types'
 
 interface WebStorageCon extends Omit<CreateStorageParams, 'key' | 'iv'> {
-  encryption: AesEncryption
+  encryption: Encryption
 }
 
 /**
@@ -14,7 +14,7 @@ interface WebStorageCon extends Omit<CreateStorageParams, 'key' | 'iv'> {
  */
 export class WebStorage {
   private storage: Storage
-  private encryption: AesEncryption
+  private encryption: Encryption
   private hasEncrypt: boolean
   private prefixKey?: string
   private timeout: Nullable<number> = null
@@ -53,7 +53,7 @@ export class WebStorage {
         : null,
     })
     const stringifyValue = this.hasEncrypt
-      ? this.encryption.encryptByAES(stringData)
+      ? this.encryption.encrypt(stringData)
       : stringData
     this.storage.setItem(this.getKey(key), stringifyValue)
   }
@@ -69,7 +69,7 @@ export class WebStorage {
     if (!val) return def
 
     try {
-      const decVal = this.hasEncrypt ? this.encryption.decryptByAES(val) : val
+      const decVal = this.hasEncrypt ? this.encryption.decrypt(val) : val
       const data = JSON.parse(decVal)
       const { value, expire } = data
       if (isNullOrUnDef(expire) || expire >= new Date().getTime()) {

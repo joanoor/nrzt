@@ -1,5 +1,12 @@
 # @nrzt/form
 
+## 2.1.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.6
+
 ## 2.1.6
 
 ### Patch Changes
