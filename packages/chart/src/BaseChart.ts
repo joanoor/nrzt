@@ -11,7 +11,7 @@ import type {
   LineSeriesOption,
   PieSeriesOption,
   ScatterSeriesOption,
-  MapSeriesOption,
+  // MapSeriesOption,
   RadarSeriesOption,
   RadiusAxisComponentOption,
 } from 'echarts'
@@ -496,6 +496,6 @@ export function getDefaultChartOpt(option: EChartsOption, type: ChartType) {
   return deepmerge<EChartsOption>(allChartOpt[type], option)
 }
 
-export function getChartOption(option: EChartsOption, type: ChartType) {
-  return
-}
+// export function getChartOption(option: EChartsOption, type: ChartType) {
+//   return
+// }

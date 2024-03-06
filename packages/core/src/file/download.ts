@@ -197,7 +197,6 @@ export function downloadByJson<T extends any[]>(
     afterDownload?: () => void
   } = {}
 ) {
-  if (!data || data.length === 0) return
   const { beforeDownload, afterDownload } = option
 
   const wb = utils.book_new()

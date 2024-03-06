@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/core",
-  "version": "2.2.6",
+  "version": "2.2.15",
   "description": "Collection of essential Utilities",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
@@ -38,11 +38,9 @@
   "dependencies": {
     "is-promise": "^4.0.0"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "@types/lodash-es": ">=4.17.7",
     "@types/qs": "^6.9.7",
-    "dayjs": ">=1.11.8",
     "deepmerge": "^4.3.1",
     "lodash-es": ">=4.17.21",
     "qs": "^6.11.2",

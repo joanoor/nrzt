@@ -1,5 +1,59 @@
 # @nrzt/core
 
+## 2.2.15
+
+### Patch Changes
+
+- fabu
+
+## 2.2.14
+
+### Patch Changes
+
+- 发布
+
+## 2.2.13
+
+### Patch Changes
+
+- 发布了
+
+## 2.2.12
+
+### Patch Changes
+
+- 发布超时，重新发布
+
+## 2.2.11
+
+### Patch Changes
+
+- 重新发布
+
+## 2.2.10
+
+### Patch Changes
+
+- 重新上传
+
+## 2.2.9
+
+### Patch Changes
+
+- 移除了 dayjs
+
+## 2.2.8
+
+### Patch Changes
+
+- 打包
+
+## 2.2.7
+
+### Patch Changes
+
+- 修改了 dayjs 的方式
+
 ## 2.2.6
 
 ### Patch Changes

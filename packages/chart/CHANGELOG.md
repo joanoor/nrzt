@@ -1,5 +1,68 @@
 # @nrzt/chart
 
+## 2.1.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.15
+
+## 2.1.15
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.14
+
+## 2.1.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.13
+
+## 2.1.13
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.12
+
+## 2.1.12
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.11
+
+## 2.1.11
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.10
+
+## 2.1.10
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.9
+
+## 2.1.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.8
+
+## 2.1.8
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/core@2.2.7
+
 ## 2.1.7
 
 ### Patch Changes
