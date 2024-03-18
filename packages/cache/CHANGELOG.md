@@ -1,5 +1,12 @@
 # @nrzt/cache
 
+## 2.1.17
+
+### Patch Changes
+
+- Updated dependencies
+  - @nrzt/cipher@2.1.6
+
 ## 2.1.16
 
 ### Patch Changes

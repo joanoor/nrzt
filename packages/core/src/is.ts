@@ -9,29 +9,8 @@ import {
 } from 'lodash-es'
 import { getTypeOfValue } from './utils'
 
-export {
-  isString,
-  isNumber,
-  isArray,
-  isBoolean,
-  isDate,
-  isRegExp,
-  isUndefined,
-  isNull,
-  isFunction,
-  isMap,
-  isWeakMap,
-  isWeakSet,
-} from 'lodash-es'
-
 export const isWindow = (val: unknown): val is Window =>
   typeof window !== 'undefined' && getTypeOfValue(val) === 'window'
-
-export const isBrowser = !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
-)
 
 export const isServer = typeof window === 'undefined'
 

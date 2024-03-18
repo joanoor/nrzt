@@ -42,6 +42,9 @@
   "peerDependencies": {
     "@types/qs": "^6.9.7",
     "axios": ">=1.4.0",
-    "qs": "^6.11.2"
+    "qs": "^6.11.2",
+    "lodash-es": ">=4.17.21",
+    "@types/lodash-es": ">=4.17.12",
+    "deepmerge": "^4.3.1"
   }
 }

@@ -1,11 +1,4 @@
-import { decrypt as aesDecrypt, encrypt as aesEncrypt } from 'crypto-js/aes'
-import UTF8, { parse } from 'crypto-js/enc-utf8'
-import pkcs7 from 'crypto-js/pad-pkcs7'
-import CTR from 'crypto-js/mode-ctr'
-import Base64 from 'crypto-js/enc-base64'
-import MD5 from 'crypto-js/md5'
-import SHA256 from 'crypto-js/sha256'
-import SHA512 from 'crypto-js/sha512'
+import CryptoES from 'crypto-es'
 import JSEncrypt from 'JSEncrypt'
 
 // Define an interface for encryption
@@ -31,24 +24,26 @@ class AesEncryption implements Encryption {
   private readonly iv
 
   constructor({ key, iv }: EncryptionParams) {
-    this.key = parse(key)
-    this.iv = parse(iv)
+    this.key = CryptoES.enc.Utf8.parse(key)
+    this.iv = CryptoES.enc.Utf8.parse(iv)
   }
 
   get getOptions() {
     return {
-      mode: CTR,
-      padding: pkcs7,
+      mode: CryptoES.mode.CTR,
+      padding: CryptoES.pad.Pkcs7,
       iv: this.iv,
     }
   }
 
   encrypt(plainText: string) {
-    return aesEncrypt(plainText, this.key, this.getOptions).toString()
+    return CryptoES.AES.encrypt(plainText, this.key, this.getOptions).toString()
   }
 
   decrypt(cipherText: string) {
-    return aesDecrypt(cipherText, this.key, this.getOptions).toString(UTF8)
+    return CryptoES.AES.decrypt(cipherText, this.key, this.getOptions).toString(
+      CryptoES.enc.Utf8
+    )
   }
 }
 
@@ -68,11 +63,11 @@ class Base64Encryption implements Encryption {
   }
 
   encrypt(plainText: string) {
-    return UTF8.parse(plainText).toString(Base64)
+    return CryptoES.enc.Utf8.parse(plainText).toString(CryptoES.enc.Base64)
   }
 
   decrypt(cipherText: string) {
-    return Base64.parse(cipherText).toString(UTF8)
+    return CryptoES.enc.Base64.parse(cipherText).toString(CryptoES.enc.Utf8)
   }
 }
 
@@ -92,7 +87,7 @@ class MD5Hashing implements Hashing {
   }
 
   hash(plainText: string) {
-    return MD5(plainText).toString()
+    return CryptoES.MD5(plainText).toString()
   }
 }
 
@@ -112,7 +107,7 @@ class SHA256Hashing implements Hashing {
   }
 
   hash(plainText: string) {
-    return SHA256(plainText).toString()
+    return CryptoES.SHA256(plainText).toString()
   }
 }
 
@@ -132,7 +127,7 @@ class SHA512Hashing implements Hashing {
   }
 
   hash(plainText: string) {
-    return SHA512(plainText).toString()
+    return CryptoES.SHA512(plainText).toString()
   }
 }
 

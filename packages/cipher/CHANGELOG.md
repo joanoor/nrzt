@@ -1,5 +1,11 @@
 # @nrzt/cipher
 
+## 2.1.6
+
+### Patch Changes
+
+- 修改为 crypto-es
+
 ## 2.1.5
 
 ### Patch Changes

@@ -8,9 +8,9 @@ import type {
 } from 'axios'
 import type { CreateAxiosOptions } from './axiosTransform'
 import { AxiosCanceler } from './axiosCancel'
-import { cloneDeep, isFunction } from '@nrzt/core'
 import { ContentTypeEnum, RequestEnum, RequestOptions, Result } from './types'
 // import { UploadFileParams } from './types'
+import { isFunction, cloneDeep } from 'lodash-es'
 
 /**
  * 封装axios

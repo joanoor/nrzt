@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/cache",
-  "version": "2.1.16",
+  "version": "2.1.17",
   "description": "Toolset about caching",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
@@ -37,7 +37,8 @@
     "sessionStorage"
   ],
   "sideEffects": false,
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "@nrzt/cipher": "workspace:*",
     "@nrzt/core": "workspace:*"
   }

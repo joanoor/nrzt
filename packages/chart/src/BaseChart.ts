@@ -1,4 +1,5 @@
-import { deepmerge, isString } from '@nrzt/core'
+import { isString } from 'lodash-es'
+import deepmerge from 'deepmerge'
 import type {
   // LegendComponentOption,
   GridComponentOption,

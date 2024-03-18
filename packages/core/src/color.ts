@@ -1,4 +1,5 @@
-import { isHexColor, isNumber } from '..'
+import { isHexColor } from './is'
+import { isNumber } from 'lodash-es'
 
 /**
  * Generates a random hexadecimal color code

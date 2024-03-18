@@ -1,8 +1,10 @@
 import type { AxiosTransform, CreateAxiosOptions } from './src/axiosTransform'
-import { setObjToUrlParams, isString, deepmerge, isNumber } from '@nrzt/core'
+import { setObjToUrlParams } from '@nrzt/core'
+import { isString, isNumber } from 'lodash-es'
 import { formatRequestDate, addTimeStamp } from './src/helper'
 import { RequestEnum, ContentTypeEnum } from './src/types'
 import { IAxios } from './src/Axios'
+import deepmerge from 'deepmerge'
 
 // transform的默认值
 const defaultTransform: AxiosTransform = {
@@ -23,7 +25,7 @@ const defaultTransform: AxiosTransform = {
       formatDate,
       joinTimestamp = true,
       urlPrefix,
-      timeout
+      timeout,
     } = options
     if (joinPrefix) {
       config.url = `${urlPrefix}${config.url}`
@@ -53,8 +55,7 @@ const defaultTransform: AxiosTransform = {
           config.url + params + `${addTimeStamp(joinTimestamp, true)}`
         config.params = undefined
       }
-    }
-    else {
+    } else {
       /* istanbul ignore else */
       if (!isString(params)) {
         /* istanbul ignore if */

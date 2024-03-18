@@ -1,4 +1,5 @@
-import { isPlainObject, isString } from '@nrzt/core'
+import { isPlainObject } from '@nrzt/core'
+import { isString } from 'lodash-es'
 
 const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss'
 

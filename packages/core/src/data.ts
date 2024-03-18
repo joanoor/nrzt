@@ -2,9 +2,15 @@
  * dm(data manipulate: 数据操纵)
  */
 
-import { isEqual, flatten, cloneDeep } from 'lodash-es'
-import { isArray, isNumber, isString } from './is'
-import { deepmerge } from '..'
+import {
+  isEqual,
+  flatten,
+  cloneDeep,
+  isArray,
+  isNumber,
+  isString,
+} from 'lodash-es'
+import deepmerge from 'deepmerge'
 
 interface TreeHelperConfig {
   id: string
