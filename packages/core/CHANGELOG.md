@@ -1,5 +1,17 @@
 # @nrzt/core
 
+## 2.2.17
+
+### Patch Changes
+
+- 将 qs 替换成 query-string
+
+## 2.2.16
+
+### Patch Changes
+
+- 修改依赖，提取出涉及的 dom 操作
+
 ## 2.2.15
 
 ### Patch Changes

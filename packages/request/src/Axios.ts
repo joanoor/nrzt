@@ -1,4 +1,4 @@
-import qs from 'qs'
+import queryString from 'query-string'
 import axios from 'axios'
 import type {
   AxiosError,
@@ -166,10 +166,10 @@ export class IAxios {
     ) {
       return config
     }
-    // 否则，对data进行qs序列化处理，转换成key1=value1&key2=value2这种样式
+    // 否则，对data进行queryString序列化处理，转换成key1=value1&key2=value2这种样式
     return {
       ...config,
-      data: qs.stringify(config.data, { arrayFormat: 'brackets' }),
+      data: queryString.stringify(config.data),
     }
   }
 

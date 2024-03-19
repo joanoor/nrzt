@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/core",
-  "version": "2.2.15",
+  "version": "2.2.17",
   "description": "Collection of essential Utilities",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
@@ -38,12 +38,5 @@
   "dependencies": {
     "is-promise": "^4.0.0"
   },
-  "peerDependencies": {
-    "@types/lodash-es": ">=4.17.7",
-    "@types/qs": "^6.9.7",
-    "deepmerge": "^4.3.1",
-    "lodash-es": ">=4.17.21",
-    "qs": "^6.11.2",
-    "xlsx": ">=0.18.5"
-  }
+  "peerDependencies": {}
 }

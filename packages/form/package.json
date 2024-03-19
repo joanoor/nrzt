@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/form",
-  "version": "2.1.16",
+  "version": "2.1.18",
   "description": "Generate form form structure and verification rules",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
@@ -38,10 +38,10 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "async-validator": "^4.2.5",
-    "@nrzt/core": "workspace:*"
+    "async-validator": "^4.2.5"
   },
   "peerDependencies": {
-    "element-plus": ">=2.3.5"
+    "element-plus": ">=2.3.5",
+    "@nrzt/core": "workspace:*"
   }
 }

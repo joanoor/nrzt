@@ -54,18 +54,3 @@ declare interface ChangeEvent extends Event {
 declare interface WheelEvent {
   path?: EventTarget[]
 }
-declare type ExitFullscreen = typeof document.exitFullscreen
-declare type RequestFullscreen =
-  typeof document.documentElement.requestFullscreen
-
-declare interface Document {
-  webkitExitFullscreen: ExitFullscreen
-  mozCancelFullScreen: ExitFullscreen
-  msExitFullscreen: ExitFullscreen
-}
-
-declare interface HTMLElement {
-  webkitRequestFullscreen: RequestFullscreen
-  mozRequestFullScreen: RequestFullscreen
-  msRequestFullscreen: RequestFullscreen
-}

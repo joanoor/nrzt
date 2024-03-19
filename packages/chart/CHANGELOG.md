@@ -1,5 +1,17 @@
 # @nrzt/chart
 
+## 2.1.18
+
+### Patch Changes
+
+- 将 qs 替换成 query-string
+
+## 2.1.17
+
+### Patch Changes
+
+- 修改依赖，提取出涉及的 dom 操作
+
 ## 2.1.16
 
 ### Patch Changes

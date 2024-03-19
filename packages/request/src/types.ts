@@ -12,7 +12,7 @@ export interface UploadFileParams {
 }
 
 export type ErrorMessageMode = 'none' | 'modal' | 'message' | undefined
-export type SuccessMessageMode = ErrorMessageMode;
+export type SuccessMessageMode = ErrorMessageMode
 
 // post请求的时候添加参数到url
 export interface RequestOptions {
@@ -24,18 +24,18 @@ export interface RequestOptions {
   apiUrl?: string // 接口地址
   urlPrefix?: string // 请求拼接路径
   errorMessageMode?: ErrorMessageMode // 消息提示类型
-  successMessageMode?:SuccessMessageMode 
+  successMessageMode?: SuccessMessageMode
   joinTimestamp?: boolean // 是否加入时间戳
   ignoreCancelToken?: boolean // 忽略cancelToken
   withToken?: boolean // 是否携带token
-  retryRequest?: RetryRequest;
+  retryRequest?: RetryRequest
   timeout?: number
 }
 
 export interface RetryRequest {
-  isOpenRetry: boolean;
-  count: number;
-  waitTime: number;
+  isOpenRetry: boolean
+  count: number
+  waitTime: number
 }
 
 export interface Result<T = any> {
@@ -63,7 +63,7 @@ export enum ContentTypeEnum {
   // json
   JSON = 'application/json;charset=UTF-8',
   // 下面这两种都是formData的形式
-  // form-data qs
+  // form-data
   FORM_URLENCODED = 'application/x-www-form-urlencoded;charset=UTF-8',
   // form-data  upload
   FORM_DATA = 'multipart/form-data',

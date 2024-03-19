@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/cipher",
-  "version": "2.1.6",
+  "version": "2.1.8",
   "description": "Cipher based on crypto-js and jsencrypt",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",

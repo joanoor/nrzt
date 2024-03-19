@@ -1,5 +1,17 @@
 # @nrzt/cipher
 
+## 2.1.8
+
+### Patch Changes
+
+- 将 qs 替换成 query-string
+
+## 2.1.7
+
+### Patch Changes
+
+- 修改依赖，提取出涉及的 dom 操作
+
 ## 2.1.6
 
 ### Patch Changes

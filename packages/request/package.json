@@ -1,6 +1,6 @@
 {
   "name": "@nrzt/request",
-  "version": "2.1.18",
+  "version": "2.1.20",
   "description": "Axios-based encapsulation",
   "author": "Joanoor <https://github.com/joanoor>",
   "license": "MIT",
@@ -35,16 +35,11 @@
     "axios"
   ],
   "sideEffects": false,
-  "dependencies": {
-    "@nrzt/core": "workspace:*"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {
-    "@types/qs": "^6.9.7",
+    "@nrzt/core": "workspace:*",
     "axios": ">=1.4.0",
-    "qs": "^6.11.2",
-    "lodash-es": ">=4.17.21",
-    "@types/lodash-es": ">=4.17.12",
-    "deepmerge": "^4.3.1"
+    "query-string": "^9.0.0"
   }
 }
